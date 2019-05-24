@@ -1,14 +1,17 @@
 import React from "react";
-import { render } from "react-dom";
+import { render } from "react-dom"
+import 'semantic-ui-css/semantic.min.css'
 import App from "./App";
+import {ApolloProvider} from 'react-apollo'
+import client from './apollo-client'
 
 let root = document.createElement('div')
 document.body.appendChild(root)
 
 render(
-    <div>
+    <ApolloProvider client={client}>
         <App/>
-    </div>,
+    </ApolloProvider>,
     root
 );
 
